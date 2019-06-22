@@ -43,7 +43,7 @@ export class EventsComponent implements OnInit {
 
     images.forEach((item) =>{
       const {fields : {title, file : {url}}} = item;
-      const image = `http://${url}`;
+      const image = `https://${url}`;
       const {img, src, srcset} = this._util.imageDestructring(image,'300')
       result.push({
         img, src, srcset, title

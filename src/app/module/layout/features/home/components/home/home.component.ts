@@ -26,13 +26,14 @@ export class HomeComponent implements OnInit {
     this._contentfulService.getFeatureImages().then((res) => {
       res.forEach((el : any) => {
         const {title , logline, image : {fields : {file : url}}} = el;
-        const img = `http:${url.url}`;
+        const imageURL = `https:${url.url}`;
+        const {img , srcset, src} = this._util.imageDestructring(imageURL,'1920');
         this.features.push({
           title,
           logline,
-          img : `${img}?w=1920`,
-          srcset: this._util.srcSetCreation(img),
-          src: this._util.srcDefaultCreation(img)
+          img,
+          srcset,
+          src
         })
       })
     });
@@ -42,14 +43,15 @@ export class HomeComponent implements OnInit {
     this._contentfulService.getMembers().then((res) => {
       res.forEach((el : any) => {
         const {tItle , logLine, message, image : {fields : {file : url}}} = el;
-        const img = `http:${url.url}`;
+        const imageURL = `https:${url.url}`;
+        const {img , srcset, src} = this._util.imageDestructring(imageURL,'300');
         this.cardList.push({
           title : tItle,
           logline : logLine,
           description : message,
-          img : `${img}?w=300`,
-          srcset: this._util.srcSetCreation(img),
-          src: this._util.srcDefaultCreation(img)
+          img ,
+          srcset,
+          src
         })
       })
     });
