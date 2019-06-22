@@ -17,8 +17,8 @@ interface contact {
   encapsulation: ViewEncapsulation.None
 })
 export class ContactusComponent implements OnInit {
-  public lat: number = 18.7331983;
-  public lng: number = 73.6613254;
+  public lat: number = 18.733322;
+  public lng: number = 73.662218;
   public zoom: number = 17;
   public contacts : contact = {
     mobile : '',
