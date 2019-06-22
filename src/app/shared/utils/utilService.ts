@@ -27,7 +27,7 @@ export class UtilService {
      */
     public articleDestructuring(res : any[]) : Articles {
       const {title , description, image : {fields : {file : url}} } = res[0];
-      const imageURL = `http:${url.url}`;
+      const imageURL = `https:${url.url}`;
       const {img , srcset, src} = this.imageDestructring(imageURL,'1920');
       return {
           title,
@@ -43,7 +43,7 @@ export class UtilService {
      */
     public assetDestructuring(res : any) : Carousel {
         const {title , file : {url}} = res;
-        const image = `http:${url}`;
+        const image = `https:${url}`;
         const {img , srcset, src} = this.imageDestructring(image,'300');
         return {
           title,
