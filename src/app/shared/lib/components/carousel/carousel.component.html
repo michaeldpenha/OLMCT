@@ -1,0 +1,15 @@
+<div class="list-container">
+    <ng-container *ngFor="let feature of features; let i = index">
+      <div class="wrapper" [ngClass]="{'active': i === activeItem}" tabindex="-1">
+        <div class="features-div" tabindex="-1">
+          <div class="img-div">
+              <app-image [feature]="feature"></app-image>
+          </div>
+          <div class="text-div">
+              <h1>{{feature.title}}</h1>
+              <span>{{feature.logline}}</span> 
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>

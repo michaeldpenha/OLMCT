@@ -1,0 +1,19 @@
+<header>
+    <div>
+      <div class="iconDiv">
+        <a [routerLink]="homePage" attr.aria-label="{{iconAriaLabel}}">
+          <div [ngClass]="iconClassName" tabindex="-1"> </div>
+        </a>
+      </div>
+      <div class="navDiv">
+        <ng-container *ngFor="let item of links; let i = index;">
+          <a [routerLink]= "populateSlug(item)" [ngClass]="checkActiveItem(item) ? 'active' : ''">
+            <span tabindex="-1">
+              {{item.name}}
+            </span>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  
+  </header>

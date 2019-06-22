@@ -1,0 +1,36 @@
+@import '../../../../../assets/less/colors.less';
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: @white-bg;
+  height: 100%;
+  
+  & h4 {
+    color:@black-bg;
+    font-size: 29px;
+    margin: 10px 0 0 0;
+    @media (max-width: 767px){
+        font-size: 20px;
+    }
+  }
+
+  & span {
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  & p {
+    margin: 0;
+    padding: 10px;
+    font-size: 17px;
+    @media (max-width: 767px){
+        font-size: 15px;
+    }
+  }
+  & figure{
+      margin: 0;
+  }
+}

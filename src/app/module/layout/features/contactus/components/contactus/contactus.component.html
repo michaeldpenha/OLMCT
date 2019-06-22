@@ -1,0 +1,16 @@
+<!-- <ng-container *ngIf="contacts">
+    <app-article [article]="contacts" [section]="contactus"></app-article>
+</ng-container> -->
+<!-- <app-carousel [features]="article" [auto]="autoCarousel"></app-carousel> -->
+<app-carousel [features]="carousel" [auto]="autoCarousel"></app-carousel>
+<section class="contactus">
+  <div>
+    <h3>Address</h3>
+    <ng-container *ngIf="contacts['address'] != ''"><address appMarked [markHTML]="contacts['address']"></address></ng-container>
+    <address>{{contacts['mobile']}}</address>
+    <address><a [href]="mailTo">{{contacts['email']}}</a></address>
+  </div>
+  <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+      <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</section>

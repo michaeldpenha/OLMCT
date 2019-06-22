@@ -1,0 +1,13 @@
+<app-carousel [features]="features"></app-carousel>
+<div class="section">
+  <h2>Our Parish Team</h2>
+  <app-card-list [cardList]="cardList"></app-card-list>
+</div>
+<div class="section">
+  <h2>Mass and Services</h2>
+  <ng-container *ngIf="htmlContent != ''">
+    <div class="markdown" appMarked [markHTML]="htmlContent"></div>
+  </ng-container>
+</div>
+
+

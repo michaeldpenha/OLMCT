@@ -1,0 +1,5 @@
+<div class="list" [ngClass]="listCls">
+  <ng-container *ngFor="let item of cardList">
+      <app-card [item]="item"></app-card>
+  </ng-container>
+</div>

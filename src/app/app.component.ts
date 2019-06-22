@@ -1,0 +1,18 @@
+import { ContentfulService } from './shared/services/contentful/contentful.service';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent implements OnInit{
+  title = 'olmc';
+  constructor(){
+    
+  }
+
+  ngOnInit() {
+    
+  }
+}

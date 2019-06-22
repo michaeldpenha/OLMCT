@@ -1,0 +1,115 @@
+@import '../../../../../assets/less/colors.less';
+
+header {
+    width: 100%;
+    display: flex;
+    z-index: 1100;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-direction: column;
+    color: @font-color;
+    background-color: @primary-dark-color;
+    position: fixed;
+
+    & div {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-areas: "l c r";
+        grid-template-columns: 1fr 2fr;
+        @media (max-width: 767px) {
+            grid-template-rows: 2fr;
+            grid-template-areas: "l l l l" "c c c c";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        & .iconDiv {
+            display: flex;
+            grid-area: l;
+            align-items: center;
+            padding-left: 15px;
+
+            @media (max-width: 767px){
+                padding: 5px 0;
+                justify-content: center;
+            }
+
+            & a {
+                display: inline-grid;
+
+                & div {
+                    width: 120px;
+                    height: 50px;
+                    display: block;
+                    // background: url(/assets/images/our-lady-of-mt-carmel-icon.jpg) no-repeat center;
+                    background-size: contain;
+                }
+            }
+        }
+
+        & .navDiv {
+            color: @font-color;
+            display: flex;
+            grid-area: c;
+            align-items: center;
+            justify-content: left;
+            background-color: @primary-dark-color;
+
+            @media (max-width: 767px) { 
+                justify-content: space-around;
+                border-top: 1px solid @dark-bg;
+            }
+
+            & > a {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 400;
+                pointer-events: all;
+                &:hover {
+                    text-decoration: none;
+                }
+                @media (max-width: 767px) { 
+                    font-size: 16px;
+                    ine-height: 100%;
+                }
+                &.active{
+                    pointer-events: none;
+
+                    & > span:after {
+                        border-bottom-color: @border-color;
+                    }
+                }
+                & > span {
+                    color: @white-bg;
+                    display: block;
+                    position: relative;
+                    padding-top: 20px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    padding-bottom: 20px;
+                    text-decoration: none;
+                    
+                    @media (max-width: 767px) { 
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        font-weight: 600;
+                    }
+
+                    &:after {
+                        left: 50%;
+                        width: 40px;
+                        bottom: 12px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        transform: translateX(-50%);
+                        border-bottom-color: transparent;
+                        border-bottom-style: solid;
+                        border-bottom-width: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

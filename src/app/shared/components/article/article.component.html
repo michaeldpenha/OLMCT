@@ -1,0 +1,6 @@
+<app-carousel [features]="article" [auto]="autoCarousel"></app-carousel>
+<div class="sectionArticle" [ngClass]="section">
+    <ng-container *ngIf="article[0] && article[0].description != ''">
+      <div class="markdown" appMarked [markHTML]="article[0].description"></div>
+    </ng-container>
+</div>
