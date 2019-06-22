@@ -19,7 +19,7 @@ interface contact {
 export class ContactusComponent implements OnInit {
   public lat: number = 18.7331983;
   public lng: number = 73.6613254;
-  public zoom: number = 15;
+  public zoom: number = 17;
   public contacts : contact = {
     mobile : '',
     email : '',
