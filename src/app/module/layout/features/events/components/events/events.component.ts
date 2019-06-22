@@ -27,7 +27,6 @@ export class EventsComponent implements OnInit {
     this._contentfulService.getEvents({
       order: '-fields.date'
     }).then((res) => {
-      console.log(res)
       this.events = res;
     });
   }
