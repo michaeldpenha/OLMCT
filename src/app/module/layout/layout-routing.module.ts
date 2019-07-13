@@ -21,6 +21,9 @@ const routes: Routes = [{
   },{
     path: 'events',
     loadChildren: './features/events/events.module#EventsModule'
+  },{
+    path: 'communities',
+    loadChildren: './features/communities/communities.module#CommunitiesModule'
   }]
 }];
 

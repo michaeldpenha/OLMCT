@@ -1,3 +1,4 @@
+import { environment } from './../../../../../../../environments/environment';
 import { UtilService } from './../../../../../../shared/utils/utilService';
 import { Carousel } from './../../../../../../shared/models/carousel';
 import { ContentfulService } from './../../../../../../shared/services/contentful/contentful.service';
@@ -32,7 +33,7 @@ export class EventsComponent implements OnInit {
   }
 
   private _fetchHero(){
-    this._contentfulService.getAssestsById('4huor7fVOJn86PcCLbu9FJ').then((res) => {
+    this._contentfulService.getAssestsById(environment.eventImageKey).then((res) => {
         this.eventsImage.push(this._util.assetDestructuring(res))
     });
   }

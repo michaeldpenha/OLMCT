@@ -12,9 +12,10 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MarkedDirective } from './directives/marked.directive';
 import { ArticleComponent } from './components/article/article.component';
+import { CommunityCardComponent } from './components/community-card/community-card.component';
 
 @NgModule({
-  declarations: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent],
+  declarations: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent, CommunityCardComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -23,6 +24,6 @@ import { ArticleComponent } from './components/article/article.component';
     ContentfulService,
     UtilService
   ],
-  exports: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent,CardListComponent,FooterComponent,MarkedDirective,ArticleComponent]
+  exports: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent,CardListComponent,FooterComponent,MarkedDirective,ArticleComponent,CommunityCardComponent]
 })
 export class SharedModule { }

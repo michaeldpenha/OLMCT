@@ -20,7 +20,9 @@ export class HeaderComponent implements OnInit {
   }
 
   private _populateMenuItems = () => {
-    this._contentfulService.getMenuLinks().then((res) => {
+    this._contentfulService.getMenuLinks({
+      order: 'fields.order'
+    }).then((res) => {
       this.menuLinks = res;
     })
   }
