@@ -12,4 +12,9 @@
         </div>
       </div>
     </ng-container>
+    <!-- Next and previous buttons -->
+    <ng-container *ngIf="features.length > 1">
+      <a class="prev" (click)="activeItem = activeItem === 0 ? features.length - 1 : activeItem - 1 ">&#10094;</a>
+      <a class="next" (click)="activeItem = activeItem >= features.length - 1 ? 0 : activeItem + 1 ">&#10095;</a>
+    </ng-container>
   </div>
