@@ -13,14 +13,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class EventsComponent implements OnInit {
   public eventsImage : Carousel[] = [];
   public events : any[] = [];
-  public autoCarousel : boolean = false;
+  public autoCarousel : boolean = true;
   public listCls: string = 'listCls';
   constructor(private _contentfulService : ContentfulService, private _util : UtilService) {
   
   }
 
   ngOnInit() {
-    this._fetchHero()
     this._fetchEvents();
   }
 
@@ -28,31 +27,18 @@ export class EventsComponent implements OnInit {
     this._contentfulService.getEvents({
       order: '-fields.date'
     }).then((res) => {
-      this.events = res;
-    });
-  }
-
-  private _fetchHero(){
-    this._contentfulService.getAssestsById(environment.eventImageKey).then((res) => {
-        this.eventsImage.push(this._util.assetDestructuring(res))
-    });
-  }
-
-  public prepareCardData(images : any[]) {
-    const result : any[] = [];
-
-    images.forEach((item) =>{
-      const {fields : {title, file : {url}}} = item;
-      const image = `https://${url}`;
-      const {img, src, srcset} = this._util.imageDestructring(image,'300')
-      result.push({
-        img, src, srcset, title
+      res.forEach((el : any) => {
+        const {title , logline, image : {fields : {file : url}}} = el;
+        const imageURL = `https:${url.url}`;
+        const {img , srcset, src} = this._util.imageDestructring(imageURL,'1920');
+        this.events.push({
+          title,
+          logline,
+          img,
+          srcset,
+          src
+        })
       })
     });
-
-    return result;
-  }
-  public dateFormat(date :string){
-    return this._util.dateFormat(date);
   }
 }

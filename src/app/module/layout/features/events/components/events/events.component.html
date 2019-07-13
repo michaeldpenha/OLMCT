@@ -1,10 +1,2 @@
-<app-carousel [features]="eventsImage" [auto]="autoCarousel"></app-carousel>
-<section class="events">
-  <ng-container *ngFor="let item of events">
-    <div class="title">{{item.title}}</div>
-    <div class="date">{{dateFormat(item.date)}}</div>
-    <div class="listDiv">
-        <app-card-list [listCls]= "listCls" [cardList]="prepareCardData(item.images)"></app-card-list>
-    </div>
-  </ng-container>
-</section>
+<app-carousel [features]="events" [auto]="autoCarousel"></app-carousel>
+<div class="blank-div"></div>
