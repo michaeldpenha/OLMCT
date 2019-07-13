@@ -13,7 +13,8 @@ export const environment = {
       members: 'members',
       articles: 'articles',
       setup: 'setup',
-      events:'events'
+      events:'events',
+      communties: 'communities'
     }
   }
 };
