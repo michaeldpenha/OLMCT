@@ -1,8 +1,22 @@
 <div class="card">
-    <app-image [feature]="item"></app-image>
-    <div class="caption">
-        <h4>{{item.title}}</h4>
-        <span>{{item.logline}}</span>
-        <p>{{item.description}}</p>
+    <div class="content" [ngClass]="{infoContent: goInfo}">
+        <div class="front">
+            <app-image [feature]="item"></app-image>
+            <div class="caption">
+                <h4>{{item.title}}</h4>
+                <span>{{item.logline}}</span>
+                <div class="button" (click)="goInfo = !goInfo">Info</div>
+            </div>
+        </div>
+        <ng-container *ngIf="flipSupport">
+            <div class="back">
+                <div class="caption">
+                    <h4>{{item.title}}</h4>
+                    <span>{{item.logline}}</span>
+                    <div class="description" appMarked [markHTML]="item.description"></div>
+                    <div class="button" (click)="goInfo = !goInfo">Back</div>
+                </div>
+            </div>
+        </ng-container>
     </div>
 </div>

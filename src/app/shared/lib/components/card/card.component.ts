@@ -10,6 +10,7 @@ import { Card } from '../../../models/card';
 export class CardComponent implements OnInit {
   @Input() item : Card;
   @Input() cardCls: string = '';
+  @Input() flipSupport: boolean = false;
   constructor() { }
 
   ngOnInit() {
