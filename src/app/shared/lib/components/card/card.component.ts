@@ -11,6 +11,8 @@ export class CardComponent implements OnInit {
   @Input() item : Card;
   @Input() cardCls: string = '';
   @Input() flipSupport: boolean = false;
+
+  public goInfo : boolean = false;
   constructor() { }
 
   ngOnInit() {
