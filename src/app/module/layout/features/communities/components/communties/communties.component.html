@@ -1,8 +1,4 @@
 <app-carousel [features]="community"></app-carousel>
 <div class="communtiy-section">
-  <div class="communities">
-    <ng-container *ngFor="let communityItem of communties">
-      <app-community-card [item]="communityItem"></app-community-card>
-    </ng-container>
-  </div>
+    <app-card-list [cardList]="communties" [flipSupport]="flipSupport"></app-card-list>
 </div>

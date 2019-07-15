@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   public cardList: Card[] = [];
   public htmlContent : string = '';
   public flipSupport: boolean = true;
+  public showImage: boolean = true;
   constructor(private _contentfulService: ContentfulService, private _util: UtilService) { }
 
   ngOnInit() {
@@ -41,7 +42,9 @@ export class HomeComponent implements OnInit {
   }
 
   private _fetchMembers() {
-    this._contentfulService.getMembers().then((res) => {
+    this._contentfulService.getMembers({
+      order: 'fields.order'
+    }).then((res) => {
       res.forEach((el : any) => {
         const {tItle , logLine, description, image : {fields : {file : url}}} = el;
         const imageURL = `https:${url.url}`;
@@ -49,7 +52,7 @@ export class HomeComponent implements OnInit {
         this.cardList.push({
           title : tItle,
           logline : logLine,
-          description,
+          backDescription: description,
           img ,
           srcset,
           src
