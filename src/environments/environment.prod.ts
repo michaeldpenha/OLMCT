@@ -4,8 +4,8 @@ export const environment = {
   eventImageKey: '4huor7fVOJn86PcCLbu9FJ',
   communtiesImageKey: '4v4xr00RdctXlYgxQw0CGM',
   contentful: {
-    space: 'ofbadd9agszw',
-    accessToken: 'VIBvxVgl0hQWmv86HTWZR_cZNgbzG2jrpEMUqcycY1k',
+    space: 'yyo5hk6zb64d',
+    accessToken: 'LSqIFI9JkJ3avnVZCdTRIgSg-dt0q_tC3xHRhvWnVw4',
 
     contentTypeIds: {
       links: 'menuLinks',
