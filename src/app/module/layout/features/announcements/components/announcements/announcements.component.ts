@@ -1,12 +1,13 @@
 import {ContentfulService } from './../../../../../../shared/services/contentful/contentful.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Articles } from '../../../../../../shared/models/articles';
 import { UtilService } from '../../../../../../shared/utils/utilService';
 
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.less']
+  styleUrls: ['./announcements.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AnnouncementsComponent implements OnInit {
 

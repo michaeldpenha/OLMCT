@@ -41,10 +41,10 @@ export class UtilService {
     /**
      * assetDestructuring
      */
-    public assetDestructuring(res : any) : Carousel {
+    public assetDestructuring(res : any, w : string) : Carousel {
         const {title , file : {url}} = res;
         const image = `https:${url}`;
-        const {img , srcset, src} = this.imageDestructring(image,'300');
+        const {img , srcset, src} = this.imageDestructring(image,w || '300');
         return {
           title,
           img,

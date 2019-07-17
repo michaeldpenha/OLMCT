@@ -26,7 +26,7 @@ export class CommuntiesComponent implements OnInit {
 
   private _fetchHero(){
     this._contentfulService.getAssestsById(environment.communtiesImageKey).then((res) => {
-        this.community.push(this._util.assetDestructuring(res))
+        this.community.push(this._util.assetDestructuring(res,'1920'))
     });
   }
 

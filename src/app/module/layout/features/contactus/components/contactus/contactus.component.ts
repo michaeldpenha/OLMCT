@@ -50,7 +50,7 @@ export class ContactusComponent implements OnInit {
 
   private _getAssests (){
     this._contentfulService.getAssestsById('7BZevJCrBQi3cQRKNetIqd').then((res) => {
-        this.carousel.push(this._util.assetDestructuring(res))
+        this.carousel.push(this._util.assetDestructuring(res,'1920'))
     })
   }
 
