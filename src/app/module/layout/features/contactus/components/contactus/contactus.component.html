@@ -7,8 +7,8 @@
   <div>
     <h3>Address</h3>
     <ng-container *ngIf="contacts['address'] != ''"><address appMarked [markHTML]="contacts['address']"></address></ng-container>
-    <address>{{contacts['mobile']}}</address>
-    <address><a [href]="mailTo">{{contacts['email']}}</a></address>
+    <ng-container *ngIf="contacts['mobile'] != ''"><address appMarked [markHTML]="contacts['mobile']"></address></ng-container>
+    <ng-container *ngIf="contacts['email'] != ''"><address appMarked [markHTML]="contacts['email']"><a [href]="mailTo"></a></address></ng-container>
   </div>
   <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
       <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
