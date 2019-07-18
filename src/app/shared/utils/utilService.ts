@@ -1,11 +1,13 @@
 import { Articles } from './../models/articles';
 import { Injectable } from '@angular/core';
 import { Carousel } from '../models/carousel';
+import { MenuLink } from '../models/menuLink';
 
 @Injectable()
 export class UtilService {
     private _imgSizes : string[] = ['768 768w','1024 1024w','1280 1280w','1440 1440w'];
     private _srcSize : string = '768';
+    private _menuLinks: MenuLink[];
     /**
      * srcSetCreation
      */
@@ -94,4 +96,12 @@ export class UtilService {
 
         return result;
     }
+
+    public getNavLinks = () : MenuLink[] => {
+        return this._menuLinks;
+      }
+    
+      public setNavlinks = (links : MenuLink[]) => {
+        this._menuLinks = links;
+      }
 }

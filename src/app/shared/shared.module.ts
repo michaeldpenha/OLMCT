@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MarkedDirective } from './directives/marked.directive';
 import { ArticleComponent } from './components/article/article.component';
 import { CommunityCardComponent } from './components/community-card/community-card.component';
+import { RouterService } from './services/router/router.service';
 
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent, CommunityCardComponent],
@@ -22,7 +23,8 @@ import { CommunityCardComponent } from './components/community-card/community-ca
   ],
   providers:[
     ContentfulService,
-    UtilService
+    UtilService,
+    RouterService
   ],
   exports: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent,CardListComponent,FooterComponent,MarkedDirective,ArticleComponent,CommunityCardComponent]
 })

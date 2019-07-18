@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/googleanalytics.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

@@ -1,4 +1,3 @@
-import { ContentfulService } from './shared/services/contentful/contentful.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit{
-  title = 'olmc';
+  
   constructor(){
-    
   }
 
   ngOnInit() {

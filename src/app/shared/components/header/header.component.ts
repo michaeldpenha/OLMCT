@@ -1,6 +1,8 @@
+import { RouterService } from './../../services/router/router.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ContentfulService } from '../../services/contentful/contentful.service';
 import { MenuLink } from '../../models/menuLink';
+import { UtilService } from '../../utils/utilService';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,7 @@ export class HeaderComponent implements OnInit {
   public homePage : string = "/"; 
   public iconClass : string = "iconCls";
   public ariaLabel : string = "Our Lady Of Mount Carmel";
-  constructor(private _contentfulService:ContentfulService) { }
+  constructor(private _contentfulService:ContentfulService, private _routerService : RouterService, private _utils : UtilService) { }
 
   ngOnInit() {
     this._populateMenuItems()
@@ -23,7 +25,9 @@ export class HeaderComponent implements OnInit {
     this._contentfulService.getMenuLinks({
       order: 'fields.order'
     }).then((res) => {
-      this.menuLinks = res;
+      this._utils.setNavlinks(res);
+      this.menuLinks = this._utils.getNavLinks();
+      this._routerService.subscribeRouterChange();
     })
   }
 }
