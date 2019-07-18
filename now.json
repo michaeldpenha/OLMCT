@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "OLMC",
+    "alias": "ourladyofmountcarmel-talegaon.com",
     "builds": [
       {
         "src": "package.json",
