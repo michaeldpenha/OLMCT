@@ -5,6 +5,7 @@ import { environment } from './../../../../environments/environment';
 
 const {contentful} = environment;
 
+
 @Injectable({
   providedIn: 'root'
 })
