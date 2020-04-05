@@ -14,9 +14,10 @@ import { MarkedDirective } from './directives/marked.directive';
 import { ArticleComponent } from './components/article/article.component';
 import { CommunityCardComponent } from './components/community-card/community-card.component';
 import { RouterService } from './services/router/router.service';
+import { TickerComponent } from './lib/components/ticker/ticker.component';
 
-@NgModule({
-  declarations: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent, CommunityCardComponent],
+@ NgModule({
+  declarations: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent, CommunityCardComponent, TickerComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -26,6 +27,6 @@ import { RouterService } from './services/router/router.service';
     UtilService,
     RouterService
   ],
-  exports: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent,CardListComponent,FooterComponent,MarkedDirective,ArticleComponent,CommunityCardComponent]
+  exports: [HeaderComponent, NavBarComponent, CarouselComponent, CardComponent, ImageComponent, CardListComponent, FooterComponent, MarkedDirective, ArticleComponent, CommunityCardComponent, TickerComponent]
 })
 export class SharedModule { }
